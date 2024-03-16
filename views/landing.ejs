@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +32,9 @@ h1 {
   display: flex;
   gap: 10px;
 }
-
+p{
+align-items: center;
+}
 .auth-buttons a {
   text-decoration: none;
   color: #333;
@@ -73,14 +66,14 @@ main {
 }
 
 .search-bar input {
-  padding: 15px;
+  padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
   flex-grow: 1;
 }
 
 .search-bar button {
-  padding: 10px 16px;
+  padding: 8px 16px;
   background-color: #4CAF50;
   color: white;
   border: none;
@@ -97,89 +90,64 @@ main {
   width: 50%;
   margin-left:25%;
 }
-b{
-    font-size: 25px;
-}
-
-#red{
-    color:red;
-    text-align: center;
-}
-p{
-    font-size: 20px;
-    text-align: center;
-}
-label{
-    font-size: 25px;
-}
-
 .search-bar button
 
 </style>
 <body>
   <header>
     <h1>Stock Tracker</h1>
-    <p>Welcome to Stock Tracker</p>
-  
+    <p>Find real-time stock information.</p>
+    <div class="auth-buttons">
+      <a href="signup">Sign Up</a>
+      <a href="signin">Sign In</a>
+    </div>
   </header>
   <main>
-    <p>Explore the latest trends, news, and insights in the stock market.</p>
-        <p>Get real-time data, make informed decisions, and grow your investments.</p>
     <section class="search-bar">
-      <form  method="GET" action="data">
-        <label for="symbol" >Enter Stock Symbol:</label>
-        <input type="text" name="symbol" placeholder="e.g. AAPL, GOOG" height="50" size="50">
-        <button type="submit" ><b>Search</b></button>
+      <form action="#">
+        <label for="symbol">Enter Stock Symbol:</label>
+        <input type="text" id="symbol" name="symbol" placeholder="e.g. AAPL, GOOG" onclick="showPopup()">
+        <button type="submit" >Search</button>
       </form>
     </section>
-    <p><b id="red"><%= message %></b></p>
 
-    <section  id="stock">
-      <h2><u>Stock Details</u></h2>
+
+    <section class="stock-details hidden"  id="stock">
+      <h2>Stock Details</h2>
       <div class="detail">
-        <p><b>Company Name:</b><%= company %></p> 
+        <p>Company Name:</p>
         <span id="company-name"></span>
       </div>
       <div class="detail">
-        <p><b>Current Price:   </b><%= price %></p>
+        <p>Current Price:</p>
         <span id="current-price"></span>
-     
-             
       </div>
       <div class="detail">
-        <p><b>Change: </b><%= change %></p>
+        <p>Change:</p>
         <span id="change"></span>
-       
-             
       </div>
       <div class="detail">
-        <p><b>Day High:   </b><%= high %></p>
+        <p>Day High:</p>
         <span id="day-high"></span>
-     
-              
       </div>
       <div class="detail">
-        <p><b>Day Low: </b><%= low %></p>
+        <p>Day Low:</p>
         <span id="day-low"></span>
-       
-              
       </div>
       <div class="detail">
-        <p><b>52 Week High:</b><%= yearhigh %></p>
+        <p>52 Week High:</p>
         <span id="year-high"></span>
-        
-                
       </div>
       <div class="detail">
-        <p><b>52 Week Low:</b> <%= yearlow %></p>
+        <p>52 Week Low:</p>
         <span id="year-low"></span>
-        
       </div>
     </section>
-
-
-   
   </main>
- 
+  <script>
+  function showPopup() {
+    alert("Please SignUp to get the information");
+  }
+</script>
 </body>
 </html>
